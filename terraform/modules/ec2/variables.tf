@@ -1,16 +1,12 @@
-variable "aws_region" {
-  description = "AWS Region"
+
+variable "subnet_id" {
+  description = "Subnet ID"
   type        = string
-  default     = "ap-south-1"
 }
+
 
 variable "key_name" {
-  description = "Existing AWS EC2 Key Pair Name"
-  type        = string
-}
-
-variable "allowed_ssh_ip" {
-  description = "Your Public IP with /32"
+  description = "Existing AWS Key Pair"
   type        = string
 }
 
@@ -36,4 +32,9 @@ variable "end_date" {
 
 variable "bu" {
   type = string
+}
+
+variable "security_group_id" {
+  description = "Security Group ID for EC2"
+  type        = string
 }

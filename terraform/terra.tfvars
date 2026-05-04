@@ -5,10 +5,10 @@
 aws_region = "ap-south-1"
 
 # Existing AWS EC2 Key Pair
-key_name = "my-existing-key"
+key_name = "Ekansh-bootcamp"
 
 # Your Public IP for SSH Access
-allowed_ssh_ip = "X.X.X.X/32"
+allowed_ssh_ip = "106.222.214.102/32"
 
 # ==========================================
 # Mandatory Resource Tags

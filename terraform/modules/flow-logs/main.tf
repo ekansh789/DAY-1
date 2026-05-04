@@ -36,7 +36,7 @@ resource "aws_iam_role_policy" "flow_logs_policy" {
   })
 }
 
-resource "aws_flow_log" "this" {
+resource "aws_flow_log" "Ekansh-vpc-flowlogs" {
   iam_role_arn    = aws_iam_role.flow_logs_role.arn
   log_destination = aws_cloudwatch_log_group.flow_logs.arn
   traffic_type    = "ALL"
