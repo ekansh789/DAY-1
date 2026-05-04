@@ -1,0 +1,50 @@
+module "vpc" {
+  source = "./modules/vpc"
+
+  owner        = var.owner
+  dm           = var.dm
+  department   = var.department
+  project_name = var.project_name
+  end_date     = var.end_date
+  bu           = var.bu
+}
+
+module "security_group" {
+  source = "./modules/security-group"
+
+  vpc_id         = module.vpc.vpc_id
+  allowed_ssh_ip = var.allowed_ssh_ip
+
+  owner        = var.owner
+  dm           = var.dm
+  department   = var.department
+  project_name = var.project_name
+  end_date     = var.end_date
+  bu           = var.bu
+}
+
+module "flow_logs" {
+  source = "./modules/flow-logs"
+
+  vpc_id = module.vpc.vpc_id
+}
+
+resource "aws_key_pair" "this" {
+  key_name   = var.key_name
+  public_key = file(var.public_key_path)
+}
+
+module "ec2" {
+  source = "./modules/ec2"
+
+  subnet_id         = module.vpc.public_subnet_id
+  security_group_id = module.security_group.sg_id
+  key_name          = aws_key_pair.this.key_name
+
+  owner        = var.owner
+  dm           = var.dm
+  department   = var.department
+  project_name = var.project_name
+  end_date     = var.end_date
+  bu           = var.bu
+}
