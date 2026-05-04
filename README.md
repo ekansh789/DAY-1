@@ -3,6 +3,7 @@ Retail-app-project training
 
 * Created Terraform modules for MDATP and Docker installation.
 * Created separate Terraform modules for EC2, VPC, Security Groups, and Flow Logs.
+* Going to Install Mdtap and Docker 
 * Created a Dockerfile, built the Docker image, and pushed it to Docker Hub.
 
 Docker Hub Repository:
