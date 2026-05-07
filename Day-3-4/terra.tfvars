@@ -1,0 +1,6 @@
+owner        = "ekansh.dwivedi@einfochips.com"
+dm           = "Bharatkumar.advani@einfochips.com"
+department   = "PES"
+project_name = "EIC internal"
+end_date     = "26/08/2026"
+bu           = "IA"
