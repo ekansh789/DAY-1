@@ -11,7 +11,7 @@ data "aws_ami" "al2023" {
 
 resource "aws_instance" "ekansh-ec2bootcamp" {
   ami                         = data.aws_ami.al2023.id
-  instance_type               = "t3.medium"
+  instance_type               = "t3.large"
   subnet_id                   = var.subnet_id
   vpc_security_group_ids      = [var.security_group_id]
   key_name                    = var.key_name

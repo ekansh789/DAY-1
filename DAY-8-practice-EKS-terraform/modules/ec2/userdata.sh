@@ -12,6 +12,21 @@ systemctl start docker
 
 usermod -aG docker ec2-user
 
+dnf update -y
+
+# Create Docker CLI plugin directory
+mkdir -p /usr/local/lib/docker/cli-plugins
+
+# Download latest Docker Compose v2 binary
+wget https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64 \
+  -O /usr/local/lib/docker/cli-plugins/docker-compose
+
+# Make Docker Compose executable
+chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
+
+# Verify installation
+docker compose version
+
 # Install Microsoft Defender
 #!/bin/bash
 

@@ -1,6 +1,5 @@
 variable "aws_region" {
   description = "AWS Region"
-  type        = string
   default     = "ap-south-1"
 }
 
@@ -35,5 +34,31 @@ variable "end_date" {
 }
 
 variable "bu" {
+  type = string
+}
+
+variable "vpc_id" {
+  type = string
+}
+
+variable "route_table_id" {
+ type = string 
+}
+
+variable "internet_gateway_id" {
+  type = string
+}
+
+variable "max_size" {}
+variable "min_size" {}
+variable "cluster_name" {}
+variable "cluster_version" {}
+variable "instance_type" {}
+variable "environment" {}
+variable "desired_size" {}
+variable "allowed_cidr" {
+  type = string
+  }
+variable "public_cidr" {
   type = string
 }
