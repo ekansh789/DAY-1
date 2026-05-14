@@ -81,23 +81,6 @@ Successfully deployed a StatefulSet using YAML manifests with:
 
 ---
 
-# Headless Service
-
-Headless Service works like having direct phone numbers:
-
-* You can directly connect to a specific Pod.
-* Each Pod gets its own stable DNS name and identity.
-
-Example:
-
-* `app-0`
-* `app-1`
-* `app-2`
-
-Headless Services are mainly used for Stateful applications.
-
----
-
 # Pod Identity Association (PIA)
 
 Used EKS Pod Identity to:
